@@ -29,6 +29,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/components/mycomponent/simplecomp.exam/templates/.default" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -53,7 +58,7 @@
       <updated>1571836735347</updated>
       <workItem from="1571836736435" duration="249000" />
       <workItem from="1571837081008" duration="3294000" />
-      <workItem from="1571898519373" duration="7328000" />
+      <workItem from="1571898519373" duration="7823000" />
     </task>
     <servers />
   </component>

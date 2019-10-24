@@ -38,13 +38,21 @@ if ($arParams['PROPERTY_CODE'] && $arParams['ID_NEWS'] && $arParams['ID_CATALOG'
                 if (isset($item['CATALOG'][$ob['IBLOCK_SECTION_ID']])):
                     $arResult['NEWS'][$key]['CATALOG']['ITEM'][] = $ob;
                     $arResult['COUNT']++;
+                    if (!$arResult["MAX"] && !$arResult["MIN"]) {
+                        $arResult["MAX"] = $ob["PROPERTY_PRICE_VALUE"];
+                        $arResult["MIN"] = $ob["PROPERTY_PRICE_VALUE"];
+                    }
+                    if ($arResult["MAX"] < $ob["PROPERTY_PRICE_VALUE"])
+                        $arResult["MAX"] = $ob["PROPERTY_PRICE_VALUE"];
+                    if ($arResult["MIN"] > $ob["PROPERTY_PRICE_VALUE"])
+                        $arResult["MIN"] = $ob["PROPERTY_PRICE_VALUE"];
                 endif;
             endforeach;
         }
     }
-    $APPLICATION->SetTitle("Элементов - " . $arResult['COUNT']);
+    $this->SetResultCacheKeys(array("MAX", "MIN", "COUNT"));
     $this->includeComponentTemplate();
-    endif;
+endif;
 
 
-    ?>
+?>
