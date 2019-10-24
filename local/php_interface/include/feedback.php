@@ -20,13 +20,8 @@ class MyClass
                 ));
             endif;
 
-            $arEventFields = array(
-                "AUTHOR" => $massege . ", данные из формы: " . $arFields['AUTHOR'],
-                'TEXT' => $arFields['TEXT'],
-                'AUTHOR_EMAIL' => $arFields['AUTHOR_EMAIL'],
-            );
+            $arFields['AUTHOR'] = $massege . ", данные из формы: " . $arFields['AUTHOR'];
 
-            CEvent::Send("FEEDBACK_FORM", SITE_ID, $arEventFields);
         endif;
     }
 }
